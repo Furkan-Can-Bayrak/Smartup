@@ -69,7 +69,7 @@ class UserController extends Controller
             $updated = $this->userService->updateUser($id, $validated);
 
             if (!$updated) {
-                return response()->json(['success' => false,'message' => 'İşlem Başarısız'], 400);
+                return response()->json(['success' => false,'message' => 'Operation Failed'], 400);
             }
 
             return response()->json(['success' => true,'message' => 'User updated successfully']);
