@@ -63,7 +63,7 @@ class UserController extends Controller
                 'surname'     => 'sometimes|string|max:255',
                 'email' => 'required|string|max:255|unique:users,email,' . $id,
                 'telNo'       => 'sometimes|string|max:20',
-                'companyName' => 'sometimes|string|max:255|unique:companies,name'.$request->companyName,
+                'companyName' => 'sometimes|string|max:255|unique:companies,name,'. $id,
             ]);
 
             $updated = $this->userService->updateUser($id, $validated);
